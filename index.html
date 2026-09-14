@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seonju You</title>
+<meta name="description" content="Seonju You — PhD candidate at POSTECH. Time-resolved X-ray scattering at XFELs: supercooled water, amorphous ice, and real-time analysis on shift.">
+
+<link rel="canonical" href="https://sjyou12.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Seonju You">
+<meta property="og:description" content="Time-resolved X-ray scattering at XFELs: supercooled water, amorphous ice, and real-time analysis on shift.">
+<meta property="og:url" content="https://sjyou12.github.io/">
+<!-- EDIT #1 (optional) — add og.png (1200x630) to the repo, then uncomment:
+<meta property="og:image" content="https://sjyou12.github.io/og.png"> -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+*,*::before,*::after{box-sizing:border-box}
+
+/* ---- palette: cold ice ground, one warm accent (the laser) ---- */
+:root{
+  color-scheme:light;
+  --bg:#F3F6F8; --surface:#FFFFFF; --sunk:#E8EEF1;
+  --ink:#0A1519; --ink2:#4B5F68; --ink3:#7C8F98;
+  --line:#DBE3E7; --line2:#C5D1D7;
+  --accent:#0A6A85; --accent-soft:#DDEDF2;
+  --warm:#AC5019; --warm-soft:#F8EADF;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#060B0E; --surface:#0F181D; --sunk:#0B1317;
+    --ink:#E2EBEF; --ink2:#8CA1AA; --ink3:#697E87;
+    --line:#1C282E; --line2:#27363E;
+    --accent:#55C2DF; --accent-soft:#0B2830;
+    --warm:#EE9A5C; --warm-soft:#2A1A11;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#060B0E; --surface:#0F181D; --sunk:#0B1317;
+  --ink:#E2EBEF; --ink2:#8CA1AA; --ink3:#697E87;
+  --line:#1C282E; --line2:#27363E;
+  --accent:#55C2DF; --accent-soft:#0B2830;
+  --warm:#EE9A5C; --warm-soft:#2A1A11;
+}
+
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:2px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.page{max-width:720px; margin:0 auto; padding-inline:22px; padding-block:40px 80px;}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums;}
+
+/* ---------- banner (conference week only) ---------- */
+.banner{
+  display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
+  background:var(--warm-soft); border:1px solid var(--warm); border-left-width:3px;
+  padding:10px 14px; border-radius:3px; margin-bottom:26px; font-size:14.5px;
+}
+.banner b{color:var(--warm); font-weight:600;}
+
+/* ---------- header ---------- */
+header{padding-bottom:26px; border-bottom:1px solid var(--line2);}
+h1{
+  font-family:Newsreader,Georgia,serif; font-weight:600;
+  font-size:clamp(34px,7.5vw,48px); line-height:1.05; letter-spacing:-.02em;
+  margin:0 0 10px;
+}
+.tagline{
+  font-family:Newsreader,Georgia,serif; font-size:clamp(17px,3.4vw,20px); line-height:1.45;
+  color:var(--ink2); margin:0 0 16px; max-width:34ch; font-style:italic;
+}
+.status{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--warm-soft); color:var(--warm); border:1px solid var(--warm);
+  border-radius:99px; padding:3px 12px 4px; font-size:13.5px; font-weight:600; margin-bottom:16px;
+}
+.status::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--warm); flex:none;}
+.contact{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:15px; margin:0; padding:0; list-style:none;}
+.contact li{display:flex; gap:7px; align-items:baseline;}
+.contact .k{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); font-weight:600;}
+
+/* ---------- sections ---------- */
+section{margin-top:38px;}
+h2{
+  font-family:"Source Sans 3",sans-serif; font-size:12px; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink3);
+  margin:0 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line);
+}
+h3{font-family:Newsreader,Georgia,serif; font-size:19px; font-weight:600; letter-spacing:-.01em; margin:0 0 3px; line-height:1.3;}
+p{margin:0 0 12px;}
+p:last-child{margin-bottom:0;}
+
+/* ---------- beamtime board: the thing a beamline scientist scans ---------- */
+.board{border:1px solid var(--line2); border-radius:4px; overflow:hidden; background:var(--surface);}
+.row{display:grid; grid-template-columns:1fr auto; gap:4px 16px; padding:13px 16px; border-bottom:1px solid var(--line); align-items:baseline;}
+.row:last-child{border-bottom:none;}
+.row .lab{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); font-weight:600; grid-column:1/-1; margin-bottom:-2px;}
+.row .val{font-size:15.5px; line-height:1.45;}
+.row .val b{font-weight:600;}
+.row .n{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:14px; color:var(--accent); font-weight:500; white-space:nowrap;}
+.row.hl{background:var(--accent-soft);}
+
+/* ---------- research entries ---------- */
+.entry{margin-bottom:22px;}
+.entry:last-child{margin-bottom:0;}
+.entry p{font-size:15.5px; color:var(--ink2); margin:0;}
+
+/* ---------- skill list ---------- */
+.skills{list-style:none; margin:0; padding:0; display:grid; gap:9px;}
+.skills li{display:grid; grid-template-columns:auto 1fr; gap:11px; font-size:15.5px; line-height:1.5;}
+.skills li::before{content:""; width:5px; height:5px; margin-top:.62em; border-radius:1px; background:var(--accent); flex:none;}
+.skills b{font-weight:600;}
+
+/* ---------- publications ---------- */
+.pubs{list-style:none; margin:0; padding:0;}
+.pubs li{padding:13px 0; border-bottom:1px solid var(--line); font-size:15px; line-height:1.52;}
+.pubs li:first-child{padding-top:0;}
+.pubs li:last-child{border-bottom:none;}
+.pubs .au{color:var(--ink2); font-size:14px;}
+.pubs .au strong{color:var(--ink); font-weight:600;}
+.pubs .ti{display:block; margin:2px 0 3px;}
+.pubs .ve{font-size:14px; color:var(--ink2);}
+.pubs .ve em{font-style:italic; color:var(--ink);}
+.pubs .ve .yr{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;}
+.tagf{
+  display:inline-block; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; font-weight:600;
+  color:var(--warm); border:1px solid var(--warm); border-radius:2px; padding:0 5px; margin-left:6px; vertical-align:1.5px;
+}
+.note{font-size:14px; color:var(--ink3); margin-top:14px;}
+
+/* ---------- two-column facts ---------- */
+.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px;}
+.facts h3{font-size:15px; font-family:"Source Sans 3",sans-serif; font-weight:600; letter-spacing:0; margin-bottom:7px;}
+.facts ul{list-style:none; margin:0; padding:0; font-size:14.5px; line-height:1.55;}
+.facts li{margin-bottom:6px; color:var(--ink2);}
+.facts li:last-child{margin-bottom:0;}
+.facts .yr{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; color:var(--ink3); font-size:13px;}
+
+.cta{
+  display:inline-block; margin-top:4px; background:var(--ink); color:var(--bg);
+  padding:9px 18px; border-radius:3px; font-size:15px; font-weight:600; text-decoration:none;
+}
+.cta:hover{background:var(--accent); color:#fff; text-decoration:none;}
+
+footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font-size:13.5px; color:var(--ink3);}
+
+@media (max-width:480px){
+  .page{padding-inline:18px; padding-block:28px 60px;}
+  .row{padding:12px 14px;}
+}
+@media print{
+  :root{--bg:#fff;--surface:#fff;--sunk:#f5f5f5;--ink:#000;--ink2:#333;--ink3:#555;--line:#ccc;--line2:#999;--accent:#000;--warm:#000;--accent-soft:#f2f2f2;--warm-soft:#fff;}
+  body{font-size:10.5pt;} .page{max-width:none;padding:0;}
+  .banner,.cta{display:none;} section{break-inside:avoid;} a{color:#000;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ============================================================
+     EDIT #2 — conference banner.
+     Fill in the poster number, keep it up during the meeting week,
+     then delete this block afterwards.
+     ============================================================ -->
+<div class="banner">
+  <b>Poster #NN</b>
+  <span>2026 Bay Area Light Sources Joint Users&rsquo; Meeting &middot; SLAC, Sep 20&ndash;25 &mdash; come say hello.</span>
+</div>
+
+<header>
+  <h1>Seonju You</h1>
+
+  <!-- EDIT #3 — your one line. Say what you do, not what field you are in. -->
+  <p class="tagline">I heat amorphous ice with a laser and watch what the liquid does before it freezes &mdash; with X-ray scattering, at free-electron lasers.</p>
+
+  <!-- EDIT #4 — confirm the dates before publishing. -->
+  <div class="status">Available for postdoctoral positions from March 2027</div>
+
+  <ul class="contact">
+    <li><span class="k">Email</span> <a href="mailto:seonjuyou@gmail.com">seonjuyou@gmail.com</a></li>
+    <li><span class="k">Institutional</span> <a href="mailto:sjyou@postech.ac.kr">sjyou@postech.ac.kr</a></li>
+    <li><span class="k">ORCID</span> <a href="https://orcid.org/0000-0003-3638-8548">0000-0003-3638-8548</a></li>
+  </ul>
+</header>
+
+<section>
+  <h2>Experiment experience</h2>
+  <div class="board">
+    <div class="row hl">
+      <span class="lab">XFEL</span>
+      <span class="val"><b>LCLS</b> &middot; European XFEL &middot; SwissFEL &middot; SACLA &middot; PAL-XFEL</span>
+      <span class="n">30+ beamtimes</span>
+    </div>
+    <div class="row">
+      <span class="lab">Synchrotron</span>
+      <span class="val">PETRA III &middot; KEK &middot; PLS-II</span>
+      <span class="n">10+ beamtimes</span>
+    </div>
+    <div class="row">
+      <span class="lab">Techniques</span>
+      <span class="val">Time-resolved X-ray scattering &middot; time-resolved X-ray absorption spectroscopy &middot; X-ray photon correlation spectroscopy</span>
+    </div>
+    <div class="row">
+      <span class="lab">On shift</span>
+      <span class="val">Real-time data analysis used to steer the experiment as it runs; setup automation in LabVIEW and AutoHotkey</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Research</h2>
+
+  <div class="entry">
+    <h3>Ultrafast dynamics of amorphous ice and supercooled water</h3>
+    <p>Using XFELs to follow structural change in amorphous ice after laser heating, reaching the deeply supercooled regime before crystallization. This line of work produced experimental evidence for a liquid&ndash;liquid critical point in bulk supercooled water, with the heat capacity diverging near 210&nbsp;K.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Fast, immediate analysis during beamtime</h3>
+    <p>Building the Python analysis that runs while the experiment is running, so decisions about where to take the measurement next are made on shift rather than months later. Several publications rest on data collected this way.</p>
+  </div>
+
+  <div class="entry">
+    <h3>AI applied to X-ray scattering analysis</h3>
+    <p>Bringing machine-learning methods to the analysis of X-ray scattering data &mdash; building on a background in both chemistry and computer science.</p>
+  </div>
+
+  <!-- ============================================================
+       EDIT #5 — a figure earns its place here. Add one image
+       (e.g. the heat-capacity divergence) as figure.png, then:
+  <figure style="margin:22px 0 0">
+    <img src="figure.png" alt="Heat capacity of supercooled water diverging near 210 K" style="border:1px solid var(--line); border-radius:3px">
+    <figcaption style="font-size:13.5px; color:var(--ink3); margin-top:7px">
+      Caption: what the reader should take from this in one sentence.
+    </figcaption>
+  </figure>
+       ============================================================ -->
+</section>
+
+<section>
+  <h2>Software &amp; computing</h2>
+  <ul class="skills">
+    <li><span><b>Analysis programs in Python</b> for time-resolved X-ray scattering, time-resolved X-ray absorption spectroscopy, and XPCS</span></li>
+    <li><span><b>Performance work</b> &mdash; multithreaded CPU and GPU implementations of analysis pipelines</span></li>
+    <li><span><b>Instrument automation</b> &mdash; LabVIEW, AutoHotkey</span></li>
+    <li><span><b>Linux server administration</b> and security maintenance</span></li>
+    <li><span><b>Molecular dynamics</b> of water systems with GROMACS</span></li>
+    <li><span><b>General software</b> &mdash; C++, C# (Unity), Java</span></li>
+  </ul>
+  <!-- EDIT #6 — if you have a public repository worth showing, link it here.
+       One well-kept repository does more work than a list of languages. -->
+</section>
+
+<section>
+  <h2>Selected publications</h2>
+  <ol class="pubs">
+    <li>
+      <span class="au"><strong>S. You</strong>&dagger;, M. Ladd-Parada&dagger;, K. Nam, <span class="mono" style="font-size:13px">et al.</span>, K. H. Kim*, A. Nilsson*</span>
+      <span class="ti">Experimental evidence of a liquid&ndash;liquid critical point in supercooled water<span class="tagf">first author</span></span>
+      <span class="ve"><em>Science</em> <span class="yr">391</span>, 1387&ndash;1391 (<span class="yr">2026</span>)</span>
+    </li>
+    <li>
+      <span class="au">R. Tyburski&dagger;, M. Shin&dagger;, <strong>S. You</strong>, <span class="mono" style="font-size:13px">et al.</span>, A. Nilsson*, K. H. Kim*</span>
+      <span class="ti">Observation of a dynamic transition in bulk supercooled water</span>
+      <span class="ve"><em>Nature Physics</em> <span class="yr">22</span>, 21&ndash;26 (<span class="yr">2026</span>)</span>
+    </li>
+    <li>
+      <span class="au">C. Yang, M. Ladd-Parada, K. Nam, S. Jeong, <strong>S. You</strong>, <span class="mono" style="font-size:13px">et al.</span>, A. Nilsson*, K. H. Kim*</span>
+      <span class="ti">Melting domain size and recrystallization dynamics of ice revealed by time-resolved X-ray scattering</span>
+      <span class="ve"><em>Nature Communications</em> <span class="yr">14</span>, 3313 (<span class="yr">2023</span>)</span>
+    </li>
+    <li>
+      <span class="au">K. Amann-Winkel&dagger;, K. H. Kim&dagger;, N. Giovambattista, <span class="mono" style="font-size:13px">et al.</span>, <strong>S. You</strong>, <span class="mono" style="font-size:13px">et al.</span>, P. H. Poole*, A. Nilsson*</span>
+      <span class="ti">Liquid&ndash;liquid phase separation in supercooled water from ultrafast heating of low-density amorphous ice</span>
+      <span class="ve"><em>Nature Communications</em> <span class="yr">14</span>, 442 (<span class="yr">2023</span>)</span>
+    </li>
+    <li>
+      <span class="au">K. H. Kim&dagger;, K. Amann-Winkel&dagger;, N. Giovambattista, <span class="mono" style="font-size:13px">et al.</span>, <strong>S. You</strong>, <span class="mono" style="font-size:13px">et al.</span>, P. H. Poole*, A. Nilsson*</span>
+      <span class="ti">Experimental observation of the liquid&ndash;liquid transition in bulk supercooled water under pressure</span>
+      <span class="ve"><em>Science</em> <span class="yr">370</span>, 978&ndash;982 (<span class="yr">2020</span>)</span>
+    </li>
+    <li>
+      <span class="au"><strong>S. You</strong>, H.-G. Lee, K. Kim, J. Yoo</span>
+      <span class="ti">Improved parameterization of protein&ndash;DNA interactions for molecular dynamics simulations of PCNA diffusion on DNA<span class="tagf">first author</span></span>
+      <span class="ve"><em>J. Chem. Theory Comput.</em> <span class="yr">16</span>, 4006&ndash;4013 (<span class="yr">2020</span>)</span>
+    </li>
+  </ol>
+  <p class="note">
+    &dagger;&nbsp;equal contribution &nbsp;&middot;&nbsp; *&nbsp;corresponding author.
+    Two further papers are in press at <em>J. Am. Chem. Soc.</em> (2026), one in <em>Communications Chemistry</em> (2026), and one is under review.
+    Full list of 12 publications on <a href="https://orcid.org/0000-0003-3638-8548">ORCID</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Background</h2>
+  <div class="facts">
+    <div>
+      <h3>Education</h3>
+      <ul>
+        <li><span class="yr">2020&ndash;</span> &nbsp;M.S./Ph.D., Chemistry, POSTECH<br><span style="font-size:13.5px">Advisor: Prof. Kyung Hwan Kim</span></li>
+        <li><span class="yr">2016&ndash;2020</span> &nbsp;B.S., Chemistry and Computer Science &amp; Engineering (double degree), POSTECH &mdash; <i>magna cum laude</i></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Selected awards</h3>
+      <ul>
+        <li><span class="yr">2026</span> &nbsp;POSTECHIAN Fellowship, Innovation Track</li>
+        <li><span class="yr">2026</span> &nbsp;Outstanding Research Paper Award, Dept. of Chemistry, POSTECH</li>
+        <li><span class="yr">2022&ndash;2023</span> &nbsp;Four poster awards (PAL-XFEL Users&rsquo; Meeting; Korean Chemical Society)</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Invited &amp; contributed talks</h3>
+      <ul>
+        <li><span class="yr">2026</span> &nbsp;Invited seminar, Korea Institute for Advanced Study (KIAS)</li>
+        <li><span class="yr">2024</span> &nbsp;143rd Summer Symposium, KCS Physical Chemistry Division</li>
+        <li><span class="yr">2023</span> &nbsp;3rd PAL-XFEL Users&rsquo; Meeting</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Teaching</h3>
+      <ul>
+        <li><span class="yr">2024</span> &nbsp;Instructor, Young Chemist Colloquium</li>
+        <li><span class="yr">2020&ndash;2021</span> &nbsp;TA, General Chemistry</li>
+        <li><span class="yr">2017&ndash;2020</span> &nbsp;Undergraduate mentoring &mdash; best mentor, 2019</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Full CV</h2>
+  <!-- EDIT #7 — put cv.pdf in the repository root. Keep the filename
+       fixed forever: the QR code on your printed cards cannot be changed. -->
+  <p><a class="cta" href="cv.pdf">Download CV (PDF)</a></p>
+</section>
+
+<footer>
+  Seonju You &middot; Department of Chemistry, POSTECH, Pohang, Republic of Korea &middot;
+  last updated <span class="mono">September 2026</span>
+</footer>
+
+</div>
+</body>
+</html>
