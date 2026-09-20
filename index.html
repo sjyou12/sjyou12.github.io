@@ -24,16 +24,16 @@
 :root{
   color-scheme:light;
   --bg:#F3F6F8; --surface:#FFFFFF; --sunk:#E8EEF1;
-  --ink:#0A1519; --ink2:#4B5F68; --ink3:#7C8F98;
+  --ink:#0A1519; --ink2:#4B5F68; --ink3:#60727B;
   --line:#DBE3E7; --line2:#C5D1D7;
   --accent:#0A6A85; --accent-soft:#DDEDF2;
-  --warm:#AC5019; --warm-soft:#F8EADF;
+  --warm:#9E4917; --warm-soft:#F8EADF;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --bg:#060B0E; --surface:#0F181D; --sunk:#0B1317;
-    --ink:#E2EBEF; --ink2:#8CA1AA; --ink3:#697E87;
+    --ink:#E2EBEF; --ink2:#8CA1AA; --ink3:#778C95;
     --line:#1C282E; --line2:#27363E;
     --accent:#55C2DF; --accent-soft:#0B2830;
     --warm:#EE9A5C; --warm-soft:#2A1A11;
@@ -42,7 +42,7 @@
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#060B0E; --surface:#0F181D; --sunk:#0B1317;
-  --ink:#E2EBEF; --ink2:#8CA1AA; --ink3:#697E87;
+  --ink:#E2EBEF; --ink2:#8CA1AA; --ink3:#778C95;
   --line:#1C282E; --line2:#27363E;
   --accent:#55C2DF; --accent-soft:#0B2830;
   --warm:#EE9A5C; --warm-soft:#2A1A11;
@@ -87,8 +87,8 @@ h1{
   margin:0 0 10px;
 }
 .tagline{
-  font-family:Newsreader,Georgia,serif; font-size:clamp(16px,3.1vw,18.5px); line-height:1.5;
-  color:var(--ink2); margin:0; max-width:48ch; font-style:italic;
+  font-family:Newsreader,Georgia,serif; font-size:clamp(17px,3.7vw,20px); line-height:1.55;
+  color:var(--ink2); margin:0; max-width:46ch;
 }
 .status{
   display:inline-flex; align-items:center; gap:8px;
@@ -212,13 +212,14 @@ p:last-child{margin-bottom:0;}
   display:grid; grid-template-columns:2.6em 1fr; gap:0 10px;
   padding:14px 0; border-bottom:1px solid var(--line); font-size:15px; line-height:1.52;
 }
+.pubs li{scroll-margin-top:62px;}
 .pubs li:first-child{padding-top:0;}
 .pubs li:last-child{border-bottom:none;}
 .pubs .id{
   font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;
   font-size:13px; color:var(--ink3); font-weight:500; padding-top:3px;
 }
-.pubs .au{color:var(--ink2); font-size:14px;}
+.pubs .au{color:var(--ink2); font-size:14px; line-height:1.5;}
 .pubs .au strong{
   color:var(--ink); font-weight:600;
   text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:2px;
@@ -241,7 +242,7 @@ p:last-child{margin-bottom:0;}
 .doi{
   display:inline-block; margin-top:4px;
   font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink3);
-  text-decoration:none; word-break:break-all;
+  text-decoration:none; overflow-wrap:anywhere;
 }
 .doi:hover{color:var(--accent); text-decoration:underline;}
 .note{font-size:14px; color:var(--ink3); margin-top:16px;}
@@ -256,6 +257,26 @@ p:last-child{margin-bottom:0;}
 
 footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font-size:13.5px; color:var(--ink3);}
 
+/* ---------- mobile readability: larger body type, looser leading ---------- */
+@media (max-width:600px){
+  .banner{font-size:15px;}
+  .contact{font-size:15.5px; gap:8px 18px;}
+  .tabs a{font-size:14px; padding:13px 11px;}
+  .deg .sub{font-size:15px;}
+  .row .lab{font-size:11.5px;}
+  .row .val{font-size:16px;}
+  .rep .ti{font-size:16.5px;}
+  .rep .au,.rep .ve{font-size:15px;}
+  .ints .t{font-size:17px;}
+  .ints .d{font-size:15.5px; line-height:1.6;}
+  .skills li{font-size:16px;}
+  .facts ul{font-size:15.5px; line-height:1.6;}
+  .pubs li{font-size:15.5px; line-height:1.58;}
+  .pubs .au,.pubs .ve{font-size:14.8px;}
+  .doi{font-size:13px;}
+  .note{font-size:14.5px;}
+  .tagf{font-size:11px;}
+}
 @media (max-width:480px){
   .page{padding-inline:18px; padding-block:28px 60px;}
   .tabs{margin:0 -18px; padding:0 18px;}
@@ -332,27 +353,27 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
   <h2>Representative publications</h2>
   <ol class="rep">
     <li>
-      <span class="ti">Experimental evidence of a liquid&ndash;liquid critical point in supercooled water<span class="tagf">first author</span></span>
+      <span class="ti">Experimental evidence of a liquid&ndash;liquid critical point in supercooled water<span class="tagf">co-first author</span></span>
       <span class="au"><strong>S. You</strong> <span class="mono" style="font-size:13px">et al.</span></span>
-      <span class="ve"><em>Science</em> <span class="yr">391</span>, 1387&ndash;1391 (<span class="yr">2026</span>) &middot; <a href="#full">list [8]</a></span><br>
+      <span class="ve"><em>Science</em> <span class="yr">391</span>, 1387&ndash;1391 (<span class="yr">2026</span>) &middot; <a href="#p8" aria-label="Go to entry 8 in the full publication list">list [8]</a></span><br>
       <a class="doi" href="https://doi.org/10.1126/science.aec0018">doi.org/10.1126/science.aec0018</a>
     </li>
     <li>
       <span class="ti">Observation of a dynamic transition in bulk supercooled water<span class="tagf cool">co-author (3rd)</span></span>
       <span class="au">R. Tyburski <span class="mono" style="font-size:13px">et al.</span></span>
-      <span class="ve"><em>Nature Physics</em> <span class="yr">22</span>, 21&ndash;26 (<span class="yr">2026</span>) &middot; <a href="#full">list [7]</a></span><br>
+      <span class="ve"><em>Nature Physics</em> <span class="yr">22</span>, 21&ndash;26 (<span class="yr">2026</span>) &middot; <a href="#p7" aria-label="Go to entry 7 in the full publication list">list [7]</a></span><br>
       <a class="doi" href="https://doi.org/10.1038/s41567-025-03112-3">doi.org/10.1038/s41567-025-03112-3</a>
     </li>
     <li>
       <span class="ti">Direct observation of radical&ndash;arene contact complexes provides structural insights into selectivity in radical reactions<span class="tagf cool">co-author (2nd)</span></span>
       <span class="au">S. Lee, <strong>S. You</strong> <span class="mono" style="font-size:13px">et al.</span></span>
-      <span class="ve"><em>J. Am. Chem. Soc.</em> (<span class="yr">2026</span>) &middot; <a href="#full">list [11]</a></span><br>
+      <span class="ve"><em>J. Am. Chem. Soc.</em> (<span class="yr">2026</span>) &middot; <a href="#p11" aria-label="Go to entry 11 in the full publication list">list [11]</a></span><br>
       <a class="doi" href="https://doi.org/10.1021/jacs.6c11563">doi.org/10.1021/jacs.6c11563</a>
     </li>
     <li>
       <span class="ti">Ni&ndash;Ir interaction enables a dark reactive state in nickel catalysis<span class="tagf cool">co-author (6th)</span></span>
       <span class="au">Y. Han <span class="mono" style="font-size:13px">et al.</span></span>
-      <span class="ve"><em>J. Am. Chem. Soc.</em> <span class="yr">148</span>, 39104&ndash;39111 (<span class="yr">2026</span>) &middot; <a href="#full">list [10]</a></span><br>
+      <span class="ve"><em>J. Am. Chem. Soc.</em> <span class="yr">148</span>, 39104&ndash;39111 (<span class="yr">2026</span>) &middot; <a href="#p10" aria-label="Go to entry 10 in the full publication list">list [10]</a></span><br>
       <a class="doi" href="https://doi.org/10.1021/jacs.6c12462">doi.org/10.1021/jacs.6c12462</a>
     </li>
   </ol>
@@ -453,25 +474,25 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
 <section id="full">
   <h2>Journal publications &mdash; full list</h2>
   <ol class="pubs">
-    <li>
+    <li id="p12">
       <span class="id">[12]</span>
       <span>
-        <span class="au">A. Nilsson, <strong>S. You</strong>, K. H. Kim</span>
+        <span class="au">A. Nilsson*, <strong>S. You</strong>, K. H. Kim</span>
         <span class="ti">Comment on &ldquo;Rethinking the evidence for a liquid&ndash;liquid transition in water: What decompression experiments reveal&rdquo; [J. Chem. Phys. 164, 024506 (2026)]</span>
         <span class="ve"><em>J. Chem. Phys.</em> <span class="yr">165</span>, 097101 (<span class="yr">2026</span>)</span><br>
         <a class="doi" href="https://doi.org/10.1063/5.0328260">doi.org/10.1063/5.0328260</a>
       </span>
     </li>
-    <li>
+    <li id="p11">
       <span class="id">[11]</span>
       <span>
-        <span class="au">S. Lee, <strong>S. You</strong>, H. Y. Jo, K. Nam, S. Jeong, Y. Han, M. Shin, J. Oh, M. Ki, K. Park, C. Yang, R. Haruki, R. Fukaya, S. Nozawa, S. Adachi, S. J. Hwang, K. H. Kim</span>
+        <span class="au">S. Lee, <strong>S. You</strong>, H. Y. Jo, K. Nam, S. Jeong, Y. Han, M. Shin, J. Oh, M. Ki, K. Park, C. Yang, R. Haruki, R. Fukaya, S. Nozawa, S. Adachi, S. J. Hwang*, K. H. Kim*</span>
         <span class="ti">Direct observation of radical&ndash;arene contact complexes provides structural insights into selectivity in radical reactions</span>
         <span class="ve"><em>J. Am. Chem. Soc.</em> (<span class="yr">2026</span>)</span><br>
         <a class="doi" href="https://doi.org/10.1021/jacs.6c11563">doi.org/10.1021/jacs.6c11563</a>
       </span>
     </li>
-    <li>
+    <li id="p10">
       <span class="id">[10]</span>
       <span>
         <span class="au">Y. Han&dagger;, D. Kim&dagger;, S. Jeong&dagger;, M. Shin, K. Nam, <strong>S. You</strong>, S. Lee, K. Park, J. Oh, H. Y. Jo, C. Yang, S. Kim, M. Ki, J. Park, S. Kim, M. Kim, R. Ma, J. H. Lee, S. J. Hwang*, K. H. Kim*</span>
@@ -480,7 +501,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1021/jacs.6c12462">doi.org/10.1021/jacs.6c12462</a>
       </span>
     </li>
-    <li>
+    <li id="p9">
       <span class="id">[9]</span>
       <span>
         <span class="au">Y. Liu&dagger;, T. Eklund&dagger;, A. Karina, S. H&ouml;velmann, R. P. C. Bauer, <strong>S. You</strong>, C. Goy, N. N. Striker, A. Gierke, K. Hess, K. Schlage, L. Bocklage, F. Ardana Lamas, H. Wang, Y. Jiang, Y. Uemura, C. Milne, K. H. Kim, B. Murphy, F. Lehmk&uuml;hler, P. Zalden, K. Amann-Winkel*</span>
@@ -489,16 +510,16 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1038/s42004-026-02177-2">doi.org/10.1038/s42004-026-02177-2</a>
       </span>
     </li>
-    <li>
+    <li id="p8">
       <span class="id">[8]</span>
       <span>
         <span class="au"><strong>S. You</strong>&dagger;, M. Ladd-Parada&dagger;, K. Nam, A. Karina, S. Lee, M. Shin, C. Yang, Y. Han, S. Jeong, K. Park, K. Kim, M. Ki, R. Tyburski, I. Andronis, K. Ralf, J. H. Lee, I. Eom, M. Kim, R. Ma, D. Jang, F. Perakis, P. Poole, K. Amann-Winkel, K. H. Kim*, A. Nilsson*</span>
-        <span class="ti">Experimental evidence of a liquid&ndash;liquid critical point in supercooled water<span class="tagf">first author</span></span>
+        <span class="ti">Experimental evidence of a liquid&ndash;liquid critical point in supercooled water<span class="tagf">co-first author</span></span>
         <span class="ve"><em>Science</em> <span class="yr">391</span>, 1387&ndash;1391 (<span class="yr">2026</span>)</span><br>
         <a class="doi" href="https://doi.org/10.1126/science.aec0018">doi.org/10.1126/science.aec0018</a>
       </span>
     </li>
-    <li>
+    <li id="p7">
       <span class="id">[7]</span>
       <span>
         <span class="au">R. Tyburski&dagger;, M. Shin&dagger;, <strong>S. You</strong>, K. Nam, M. Soldemo, A. Girelli, M. Bin, S. Lee, I. Andronis, Y. Han, S. Jeong, R. A. Oggenfuss, R. Mankowsky, D. Babich, X. Liu, S. Zerdane, T. Katayama, H. Lemke, F. Perakis, A. Nilsson*, K. H. Kim*</span>
@@ -507,7 +528,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1038/s41567-025-03112-3">doi.org/10.1038/s41567-025-03112-3</a>
       </span>
     </li>
-    <li>
+    <li id="p6">
       <span class="id">[6]</span>
       <span>
         <span class="au">C. Yang, M. Ladd-Parada, K. Nam, S. Jeong, <strong>S. You</strong>, T. Eklund, A. Sp&auml;h, H. Pathak, J. H. Lee, I. Eom, M. Kim, F. Perakis, A. Nilsson, K. H. Kim*, K. Amann-Winkel*</span>
@@ -516,7 +537,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1063/5.0216904">doi.org/10.1063/5.0216904</a>
       </span>
     </li>
-    <li>
+    <li id="p5">
       <span class="id">[5]</span>
       <span>
         <span class="au">C. Yang, M. Ladd-Parada, K. Nam, S. Jeong, <strong>S. You</strong>, A. Sp&auml;h, H. Pathak, T. Eklund, T. J. Lane, J. H. Lee, I. Eom, M. Kim, K. Amann-Winkel, F. Perakis, A. Nilsson*, K. H. Kim*</span>
@@ -525,7 +546,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1038/s41467-023-38551-0">doi.org/10.1038/s41467-023-38551-0</a>
       </span>
     </li>
-    <li>
+    <li id="p4">
       <span class="id">[4]</span>
       <span>
         <span class="au">K. Amann-Winkel&dagger;, K. H. Kim&dagger;, N. Giovambattista, M. Ladd-Parada, A. Sp&auml;h, F. Perakis, H. Pathak, C. Yang, T. Eklund, T. J. Lane, <strong>S. You</strong>, S. Jeong, J. H. Lee, I. Eom, M. Kim, J. Park, S. H. Chun, P. H. Poole*, A. Nilsson*</span>
@@ -534,7 +555,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1038/s41467-023-36091-1">doi.org/10.1038/s41467-023-36091-1</a>
       </span>
     </li>
-    <li>
+    <li id="p3">
       <span class="id">[3]</span>
       <span>
         <span class="au">M. Ladd-Parada*, K. Amann-Winkel, K. H. Kim, A. Sp&auml;h, F. Perakis, H. Pathak, C. Yang, D. Mariedahl, T. Eklund, T. J. Lane, <strong>S. You</strong>, S. Jeong, M. Weston, J. H. Lee, I. Eom, M. Kim, J. Park, S. H. Chun, A. Nilsson</span>
@@ -543,7 +564,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1021/acs.jpcb.1c10906">doi.org/10.1021/acs.jpcb.1c10906</a>
       </span>
     </li>
-    <li>
+    <li id="p2">
       <span class="id">[2]</span>
       <span>
         <span class="au">K. H. Kim&dagger;, K. Amann-Winkel&dagger;, N. Giovambattista, A. Sp&auml;h, F. Perakis, H. Pathak, M. Ladd-Parada, C. Yang, D. Mariedahl, T. Eklund, T. J. Lane, <strong>S. You</strong>, S. Jeong, M. Weston, J. H. Lee, I. Eom, M. Kim, J. Park, S. H. Chun, P. H. Poole*, A. Nilsson*</span>
@@ -552,10 +573,10 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
         <a class="doi" href="https://doi.org/10.1126/science.abb9385">doi.org/10.1126/science.abb9385</a>
       </span>
     </li>
-    <li>
+    <li id="p1">
       <span class="id">[1]</span>
       <span>
-        <span class="au"><strong>S. You</strong>, H.-G. Lee, K. Kim, J. Yoo</span>
+        <span class="au"><strong>S. You</strong>, H.-G. Lee, K. Kim, J. Yoo*</span>
         <span class="ti">Improved parameterization of protein&ndash;DNA interactions for molecular dynamics simulations of PCNA diffusion on DNA<span class="tagf">first author</span></span>
         <span class="ve"><em>J. Chem. Theory Comput.</em> <span class="yr">16</span>, 4006&ndash;4013 (<span class="yr">2020</span>)</span><br>
         <a class="doi" href="https://doi.org/10.1021/acs.jctc.0c00241">doi.org/10.1021/acs.jctc.0c00241</a>
