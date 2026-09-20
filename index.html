@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seonju You</title>
-<meta name="description" content="Seonju You — PhD candidate at POSTECH. Time-resolved X-ray scattering at XFELs: analysis protocols, experiment automation, and AI for XFEL experiments.">
+<meta name="description" content="Seonju You — PhD candidate at POSTECH. Analysis protocols and automation for X-ray free-electron laser experiments, applied to the structure and dynamics of water.">
 
 <link rel="canonical" href="https://sjyou12.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Seonju You">
-<meta property="og:description" content="Time-resolved X-ray scattering at XFELs: analysis protocols, experiment automation, and AI for XFEL experiments.">
+<meta property="og:description" content="Analysis protocols and automation for X-ray free-electron laser experiments, applied to the structure and dynamics of water.">
 <meta property="og:url" content="https://sjyou12.github.io/">
+<meta property="og:image" content="https://sjyou12.github.io/photo_seonju_you.jpg">
 <meta name="twitter:card" content="summary">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,14 +74,21 @@ a:hover{text-decoration-thickness:2px}
 
 /* ---------- header ---------- */
 header{padding-bottom:26px; border-bottom:1px solid var(--line2);}
+.hgroup{display:flex; gap:26px; align-items:flex-start; justify-content:space-between; margin-bottom:16px;}
+.htext{min-width:0;}
+.portrait{
+  flex:none; width:118px; height:118px; margin-top:5px;
+  border-radius:50%; object-fit:cover; object-position:50% 10%;
+  border:1px solid var(--line2); background:var(--surface);
+}
 h1{
   font-family:Newsreader,Georgia,serif; font-weight:600;
   font-size:clamp(34px,7.5vw,48px); line-height:1.05; letter-spacing:-.02em;
   margin:0 0 10px;
 }
 .tagline{
-  font-family:Newsreader,Georgia,serif; font-size:clamp(17px,3.4vw,20px); line-height:1.45;
-  color:var(--ink2); margin:0 0 16px; max-width:36ch; font-style:italic;
+  font-family:Newsreader,Georgia,serif; font-size:clamp(16px,3.1vw,18.5px); line-height:1.5;
+  color:var(--ink2); margin:0; max-width:48ch; font-style:italic;
 }
 .status{
   display:inline-flex; align-items:center; gap:8px;
@@ -91,6 +99,10 @@ h1{
 .contact{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:15px; margin:0; padding:0; list-style:none;}
 .contact li{display:flex; gap:7px; align-items:baseline;}
 .contact .k{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); font-weight:600;}
+@media (max-width:560px){
+  .hgroup{flex-direction:column-reverse; align-items:flex-start; gap:15px;}
+  .portrait{width:92px; height:92px; margin-top:0;}
+}
 
 /* ---------- tab navigation ---------- */
 .tabs{
@@ -132,16 +144,6 @@ h3{font-family:Newsreader,Georgia,serif; font-size:19px; font-weight:600; letter
 p{margin:0 0 12px;}
 p:last-child{margin-bottom:0;}
 
-/* ---------- beamtime board ---------- */
-.board{border:1px solid var(--line2); border-radius:4px; overflow:hidden; background:var(--surface);}
-.row{display:grid; grid-template-columns:1fr auto; gap:4px 16px; padding:13px 16px; border-bottom:1px solid var(--line); align-items:baseline;}
-.row:last-child{border-bottom:none;}
-.row .lab{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); font-weight:600; grid-column:1/-1; margin-bottom:-2px;}
-.row .val{font-size:15.5px; line-height:1.45;}
-.row .val b{font-weight:600;}
-.row .n{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:14px; color:var(--accent); font-weight:500; white-space:nowrap;}
-.row.hl{background:var(--accent-soft);}
-
 /* ---------- education ---------- */
 .deg{display:grid; grid-template-columns:auto 1fr; gap:4px 16px; padding:0 0 16px; border-bottom:1px solid var(--line); margin-bottom:16px;}
 .deg:last-child{border-bottom:none; padding-bottom:0; margin-bottom:0;}
@@ -152,6 +154,29 @@ p:last-child{margin-bottom:0;}
   .deg{grid-template-columns:1fr; gap:2px;}
   .deg .when{padding-top:0;}
 }
+
+/* ---------- representative publications ---------- */
+.rep{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
+.rep li{
+  background:var(--surface); border:1px solid var(--line2); border-left:3px solid var(--accent);
+  border-radius:0 4px 4px 0; padding:13px 16px 14px;
+}
+.rep .ti{display:block; font-size:16px; font-weight:600; line-height:1.38; margin-bottom:5px;}
+.rep .au{display:block; font-size:14px; color:var(--ink2); margin-bottom:4px;}
+.rep .au strong{color:var(--ink); font-weight:600;}
+.rep .ve{font-size:14px; color:var(--ink2);}
+.rep .ve em{font-style:italic; color:var(--ink); font-weight:500;}
+.rep .ve .yr{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;}
+
+/* ---------- beamtime board ---------- */
+.board{border:1px solid var(--line2); border-radius:4px; overflow:hidden; background:var(--surface);}
+.row{display:grid; grid-template-columns:1fr auto; gap:4px 16px; padding:13px 16px; border-bottom:1px solid var(--line); align-items:baseline;}
+.row:last-child{border-bottom:none;}
+.row .lab{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink3); font-weight:600; grid-column:1/-1; margin-bottom:-2px;}
+.row .val{font-size:15.5px; line-height:1.45;}
+.row .val b{font-weight:600;}
+.row .n{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:14px; color:var(--accent); font-weight:500; white-space:nowrap;}
+.row.hl{background:var(--accent-soft);}
 
 /* ---------- research interests (emphasised) ---------- */
 .lead{
@@ -181,19 +206,6 @@ p:last-child{margin-bottom:0;}
 .skills li::before{content:""; width:5px; height:5px; margin-top:.62em; border-radius:1px; background:var(--accent); flex:none;}
 .skills b{font-weight:600;}
 
-/* ---------- representative publications ---------- */
-.rep{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
-.rep li{
-  background:var(--surface); border:1px solid var(--line2); border-left:3px solid var(--accent);
-  border-radius:0 4px 4px 0; padding:13px 16px 14px;
-}
-.rep .ti{display:block; font-size:16px; font-weight:600; line-height:1.38; margin-bottom:5px;}
-.rep .au{display:block; font-size:14px; color:var(--ink2); margin-bottom:4px;}
-.rep .au strong{color:var(--ink); font-weight:600;}
-.rep .ve{font-size:14px; color:var(--ink2);}
-.rep .ve em{font-style:italic; color:var(--ink); font-weight:500;}
-.rep .ve .yr{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;}
-
 /* ---------- publications ---------- */
 .pubs{list-style:none; margin:0; padding:0;}
 .pubs li{
@@ -207,7 +219,10 @@ p:last-child{margin-bottom:0;}
   font-size:13px; color:var(--ink3); font-weight:500; padding-top:3px;
 }
 .pubs .au{color:var(--ink2); font-size:14px;}
-.pubs .au strong{color:var(--ink); font-weight:600;}
+.pubs .au strong{
+  color:var(--ink); font-weight:600;
+  text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:2px;
+}
 .pubs .ti{display:block; margin:2px 0 3px;}
 .pubs .ve{font-size:14px; color:var(--ink2);}
 .pubs .ve em{font-style:italic; color:var(--ink);}
@@ -223,7 +238,6 @@ p:last-child{margin-bottom:0;}
   white-space:nowrap;
 }
 .tagf.cool{color:var(--accent); border-color:var(--accent);}
-.tagf.muted{color:var(--ink3); border-color:var(--line2);}
 .doi{
   display:inline-block; margin-top:4px;
   font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink3);
@@ -253,6 +267,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
   .banner,.tabs{display:none;}
   section{break-inside:avoid;} .pubs li,.rep li,.ints li{break-inside:avoid;}
   a{color:#000;text-decoration:none;}
+  .pubs .au strong{text-decoration:underline;}
   .lead{border-left:2px solid #000;}
 }
 </style>
@@ -266,9 +281,13 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
 </div>
 
 <header>
-  <h1>Seonju You</h1>
-
-  <p class="tagline">I build the analysis and automation that let an X-ray free-electron laser answer a question it could not answer before &mdash; and use it to watch water do things nobody has seen.</p>
+  <div class="hgroup">
+    <div class="htext">
+      <h1>Seonju You</h1>
+      <p class="tagline">I have developed analysis protocols and automation systems that enable X-ray free-electron lasers to conduct experiments previously thought impossible, using them to observe properties of water never before seen.</p>
+    </div>
+    <img class="portrait" src="photo_seonju_you.jpg" alt="Seonju You" width="413" height="531">
+  </div>
 
   <div class="status">Available for postdoctoral positions from March 2027</div>
 
@@ -281,39 +300,15 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
 
 <nav class="tabs" aria-label="Sections">
   <ul>
-    <li><a href="#experiment">Experiment</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#papers">Key papers</a></li>
+    <li><a href="#experiment">Experiment</a></li>
     <li><a href="#interests">Interests</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#full" class="key">Full paper list</a></li>
   </ul>
 </nav>
-
-<section id="experiment">
-  <h2>Experiment experience</h2>
-  <div class="board">
-    <div class="row hl">
-      <span class="lab">XFEL</span>
-      <span class="val"><b>LCLS</b> &middot; European XFEL &middot; SwissFEL &middot; SACLA &middot; PAL-XFEL</span>
-      <span class="n">30+ beamtimes</span>
-    </div>
-    <div class="row">
-      <span class="lab">Synchrotron</span>
-      <span class="val">PETRA III &middot; KEK &middot; PLS-II</span>
-      <span class="n">10+ beamtimes</span>
-    </div>
-    <div class="row">
-      <span class="lab">Techniques</span>
-      <span class="val">Time-resolved X-ray scattering &middot; time-resolved X-ray absorption spectroscopy &middot; X-ray photon correlation spectroscopy</span>
-    </div>
-    <div class="row">
-      <span class="lab">On shift</span>
-      <span class="val">Real-time data analysis used to steer the experiment as it runs; setup automation in LabVIEW and AutoHotkey</span>
-    </div>
-  </div>
-</section>
 
 <section id="education">
   <h2>Education</h2>
@@ -343,25 +338,49 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
       <a class="doi" href="https://doi.org/10.1126/science.aec0018">doi.org/10.1126/science.aec0018</a>
     </li>
     <li>
-      <span class="ti">Observation of a dynamic transition in bulk supercooled water<span class="tagf cool">co-author</span></span>
+      <span class="ti">Observation of a dynamic transition in bulk supercooled water<span class="tagf cool">co-author (3rd)</span></span>
       <span class="au">R. Tyburski <span class="mono" style="font-size:13px">et al.</span></span>
       <span class="ve"><em>Nature Physics</em> <span class="yr">22</span>, 21&ndash;26 (<span class="yr">2026</span>) &middot; <a href="#full">list [7]</a></span><br>
       <a class="doi" href="https://doi.org/10.1038/s41567-025-03112-3">doi.org/10.1038/s41567-025-03112-3</a>
     </li>
     <li>
-      <span class="ti">Direct observation of radical&ndash;arene contact complexes provides structural insights into selectivity in radical reactions<span class="tagf">second author</span></span>
+      <span class="ti">Direct observation of radical&ndash;arene contact complexes provides structural insights into selectivity in radical reactions<span class="tagf cool">co-author (2nd)</span></span>
       <span class="au">S. Lee, <strong>S. You</strong> <span class="mono" style="font-size:13px">et al.</span></span>
       <span class="ve"><em>J. Am. Chem. Soc.</em> (<span class="yr">2026</span>) &middot; <a href="#full">list [11]</a></span><br>
       <a class="doi" href="https://doi.org/10.1021/jacs.6c11563">doi.org/10.1021/jacs.6c11563</a>
     </li>
     <li>
-      <span class="ti">Ni&ndash;Ir interaction enables a dark reactive state in nickel catalysis<span class="tagf cool">co-author</span></span>
+      <span class="ti">Ni&ndash;Ir interaction enables a dark reactive state in nickel catalysis<span class="tagf cool">co-author (6th)</span></span>
       <span class="au">Y. Han <span class="mono" style="font-size:13px">et al.</span></span>
       <span class="ve"><em>J. Am. Chem. Soc.</em> <span class="yr">148</span>, 39104&ndash;39111 (<span class="yr">2026</span>) &middot; <a href="#full">list [10]</a></span><br>
       <a class="doi" href="https://doi.org/10.1021/jacs.6c12462">doi.org/10.1021/jacs.6c12462</a>
     </li>
   </ol>
-  <p class="note">All 13 journal publications are listed in full <a href="#full">below</a>.</p>
+  <p class="note">All 12 journal publications are listed in full <a href="#full">below</a>.</p>
+</section>
+
+<section id="experiment">
+  <h2>Experiment experience</h2>
+  <div class="board">
+    <div class="row hl">
+      <span class="lab">XFEL</span>
+      <span class="val"><b>PAL-XFEL</b> &middot; <b>LCLS</b> &middot; European XFEL &middot; SwissFEL &middot; SACLA</span>
+      <span class="n">30+ beamtimes</span>
+    </div>
+    <div class="row">
+      <span class="lab">Synchrotron</span>
+      <span class="val">KEK &middot; PETRA III &middot; PLS-II</span>
+      <span class="n">10+ beamtimes</span>
+    </div>
+    <div class="row">
+      <span class="lab">Techniques</span>
+      <span class="val">Time-resolved X-ray scattering &middot; time-resolved X-ray absorption spectroscopy &middot; X-ray photon correlation spectroscopy</span>
+    </div>
+    <div class="row">
+      <span class="lab">On shift</span>
+      <span class="val">Fast data analysis during beamtime and the determination of experimental conditions based on the analysis results; automating experiment execution using LabVIEW and AutoHotkey</span>
+    </div>
+  </div>
 </section>
 
 <section id="interests">
@@ -372,19 +391,23 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
   <ul class="ints">
     <li>
       <span class="t">X-ray scattering data analysis protocol</span>
-      <span class="d">Designing and implementing the analysis path from raw detector images to physical answers &mdash; for time-resolved X-ray scattering, time-resolved X-ray absorption spectroscopy and XPCS &mdash; fast enough to run while the experiment is still running, so the next measurement is decided on shift rather than months later.</span>
+      <span class="d">I design and implement the analysis path from raw detector images to physical answers &mdash; for time-resolved X-ray scattering, time-resolved X-ray absorption spectroscopy and XPCS &mdash; fast enough to run while the experiment is still running, so the next measurement is decided on shift rather than months later.</span>
     </li>
     <li>
       <span class="t">Experiment automation</span>
-      <span class="d">Automating beamline setup, sample handling and the data path so that beamtime is spent measuring instead of configuring, and so that a measurement made at one facility can be reproduced at another.</span>
-    </li>
-    <li>
-      <span class="t">AI application for XFEL experiment</span>
-      <span class="d">Applying machine learning to XFEL data &mdash; classification, denoising and on-the-fly decision support &mdash; building on a double degree in chemistry and computer science.</span>
+      <span class="d">I automate beamline setup, sample handling and the data path so that beamtime is spent measuring instead of configuring, and so that a measurement made at one facility can be reproduced at another.</span>
     </li>
     <li>
       <span class="t">Time-resolved X-ray scattering</span>
-      <span class="d">Ultrafast structural dynamics of amorphous ice and deeply supercooled water, following the liquid after laser heating and before it crystallizes. This line of work produced experimental evidence for a liquid&ndash;liquid critical point in bulk supercooled water.</span>
+      <span class="d">I have conducted time-resolved X-ray scattering experiments on systems in various phases, including chemical reactions in solution, liquids, amorphous materials, and crystalline solids.</span>
+    </li>
+    <li>
+      <span class="t">Revealing the secrets of water</span>
+      <span class="d">I follow the ultrafast structural dynamics of amorphous ice and deeply supercooled water after laser heating, capturing the transition from the liquid state to crystallization. This research series provides experimental evidence for the existence of a liquid&ndash;liquid critical point in bulk supercooled water.</span>
+    </li>
+    <li>
+      <span class="t">AI application for XFEL experiment</span>
+      <span class="d">The field I am currently most interested in, and where I hope to grow in the future. I hold a double degree in chemistry and computer science, and I have completed an AI-related internship and an AI-related undergraduate capstone project &mdash; the background I intend to build on.</span>
     </li>
   </ul>
 </section>
@@ -431,7 +454,7 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
   <h2>Journal publications &mdash; full list</h2>
   <ol class="pubs">
     <li>
-      <span class="id">[13]</span>
+      <span class="id">[12]</span>
       <span>
         <span class="au">A. Nilsson, <strong>S. You</strong>, K. H. Kim</span>
         <span class="ti">Comment on &ldquo;Rethinking the evidence for a liquid&ndash;liquid transition in water: What decompression experiments reveal&rdquo; [J. Chem. Phys. 164, 024506 (2026)]</span>
@@ -440,17 +463,10 @@ footer{margin-top:46px; padding-top:20px; border-top:1px solid var(--line); font
       </span>
     </li>
     <li>
-      <span class="id">[12]</span>
-      <span>
-        <span class="au">S. Jeong, M. Ki, M. Shin, K. Nam, Y. Han, <strong>S. You</strong>, S. Lee, K. Park, S. Kim, K. Kim, C. Yang, J. H. Lee, R. Ma, M. Kim, J. Park, F. Perakis, A. Nilsson, K. H. Kim*</span>
-        <span class="ti">Direct real-space observation of field-induced structural dynamics of liquid water<span class="tagf muted">under review</span></span>
-      </span>
-    </li>
-    <li>
       <span class="id">[11]</span>
       <span>
         <span class="au">S. Lee, <strong>S. You</strong>, H. Y. Jo, K. Nam, S. Jeong, Y. Han, M. Shin, J. Oh, M. Ki, K. Park, C. Yang, R. Haruki, R. Fukaya, S. Nozawa, S. Adachi, S. J. Hwang, K. H. Kim</span>
-        <span class="ti">Direct observation of radical&ndash;arene contact complexes provides structural insights into selectivity in radical reactions<span class="tagf">second author</span></span>
+        <span class="ti">Direct observation of radical&ndash;arene contact complexes provides structural insights into selectivity in radical reactions</span>
         <span class="ve"><em>J. Am. Chem. Soc.</em> (<span class="yr">2026</span>)</span><br>
         <a class="doi" href="https://doi.org/10.1021/jacs.6c11563">doi.org/10.1021/jacs.6c11563</a>
       </span>
